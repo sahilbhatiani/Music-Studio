@@ -139,13 +139,88 @@ body{
     width: 100%;
 }
 
+
+/* main */
+
 main {
+    padding: 50px 100px;
     border: var(--border);;
     height: 100%;
     overflow-y: scroll;
     display: grid;
+    grid-row-gap: 40px;
     grid-template-rows: 300px 300px 200px 200px 200px;
 }
+
+main::-webkit-scrollbar { width: 0 !important }
+
+section {
+    border: var(--border);
+    color: white;
+}
+
+#playlist-reccomendation {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+#playlist-reccomendation div{
+    width: 300px;
+    background-image: url(./photos/linkin-park.jpg);
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+
+
+
+#latest-release-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+
+}
+
+.latest-item {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+
+.latest-item img{
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+}
+
+#latest-release h2 {
+    margin-bottom: 20px;
+}
+
+#latest-release h3 {
+    line-height: 1.5rem;
+    font-weight: 450;
+}
+
+#latest-release-date {
+    color: grey;
+    font-size: 12px;
+}
+
+#latest-item-option {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
+
+
+
+
+/* Queue bar */
 
 aside {
     border: var(--border);
@@ -156,17 +231,35 @@ aside {
 #queue {
     height: 100%;
     display: grid;
-    grid-template-rows: repeat(15, minmax(100px, 100px));
+    grid-template-rows: repeat(15, 65px);
     overflow-y: scroll;
 }
 
-section {
-    border: var(--border);
-}
 
-main::-webkit-scrollbar { width: 0 !important }
+
 #queue::-webkit-scrollbar { width: 0 !important }
 
+#queue-header {
+    position: relative;
+    height: 40px;
+}
+
+#queue-header h1{
+    color: white;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight:500;
+    display: inline-block;
+}
+
+#queue-header button {
+    display: inline-block;
+    color: greenyellow;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: none;
+}
 
 
 .queue-item {
@@ -205,25 +298,4 @@ main::-webkit-scrollbar { width: 0 !important }
     right: 50px;
 }
 
-#queue-header {
-    position: relative;
-    height: 60px;
-}
-
-#queue-header h1{
-    color: white;
-    font-size: 30px;
-    font-family: sans-serif;
-    font-weight:500;
-    display: inline-block;
-}
-
-#queue-header button {
-    display: inline-block;
-    color: greenyellow;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    border: none;
-}
 
